@@ -196,15 +196,11 @@ void read_file(fstream &f, List &l)
     /*string path;
     cout << "Enter path file name: ";
     getline(cin, path);*/
-    f.open("nhap.in", ios::in);
-    node *p = l;
+    f.open("xuat.txt", ios::in);
     int x;
-    f >> x;
-    add_tail(l, x);
-    while (p->next != NULL)
-    {
-        cout << p->data << " ";
-        p = p->next;
+    node *p=l; 
+    while (f>> x){
+        add_tail(l,x);
     }
     f.close();
 }
@@ -267,9 +263,9 @@ int main()
     List l;
     fstream f;
     create_List(l);
-    // input_list(l);
-    // output_list(l);
-    // cout << endl;
+    /*input_list(l);
+    output_list(l);
+    cout << endl;*/
     /* int x;
      cin >> x;
      cout <<pos_x(l, x);*/
@@ -291,9 +287,10 @@ int main()
     // delete_tail(l);
     // delete_At(l, k);
     // output_list(l);
-    // write_file(f,l);
-    // cout <<max_list(l);
-    // write_list_file(f,l);
+    //write_file(f,l);
+    //cout <<max_list(l);
+    //write_list_file(f,l);
     read_file(f, l);
+    output_list(l);
     return 0;
 }
